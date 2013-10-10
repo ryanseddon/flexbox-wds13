@@ -6,7 +6,7 @@ html
     title Flexbox: layout in CSS that doesn't suck
 
     //- Check out 'src/bower_components/prism/' for available themes
-    link(rel='stylesheet', type='text/css', href='bower_components/prism/prism-tomorrow.css')
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
 
     link(rel='stylesheet', type='text/css', href='styles/main.css')
 
@@ -15,7 +15,15 @@ html
     article
 
       section
-        h1 Flexbox: layout in CSS that doesn't suck
+        h1.flex-foo
+          span Flexbox: 
+          span layout 
+          span in 
+          span CSS 
+          span that 
+          span doesn't 
+          span suck
+        button.button Flexy fun time
 
       section
         h2 CSS is Awesome
@@ -84,6 +92,14 @@ html
         iframe(src='http://caniuse.com/flexbox/embed/agents=ie,firefox,chrome,safari,ios_saf,android&description&stats=none', width='400', height='500', frameborder='0')
 
       section
+        h2 Pro tip
+        hr
+        ul
+          li Use Modernizr to know which version you're working with
+          li Prefixing should be handled by build tools or preprocessor
+          li Manually writing that will kill you, FACT.
+
+      section
         h2 Real world use cases
 
       section
@@ -107,13 +123,26 @@ html
             li WAT?
 
       section
-        h2 Thanks!
+        h2 Pro tip #2
+        hr
         ul
-          li Further reading
+          li Flexbox lends itself to small modules
+          li Ala OOCSS Media Object
+          li Still use floats, inline-block where it makes sense
+          li Don't force the use of flexbox cause it's shiny 
+
+      section
+        h2 Thanks!
+        ul.nope
+          li Further reading: 
+            a(http://bitly.com/bundles/ahrjay/9) bitly.com/bundles/ahrjay/9
           li Slides: 
-            a(http://ryanseddon.github.io/flexbox-wds13) github.io/flexbox-wds13   
+            a(http://ryanseddon.github.io/flexbox-wds13) github.io/flexbox-wds13
+          li
+            a(https://twitter.com/ryanseddon) @ryanseddon
 
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-dir/dist/bespoke-dir.js')
     script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
     script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
     script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')

@@ -54,7 +54,7 @@ article
     @media print
       overflow: visible
       position: static
-    perspective: 1200px
+  perspective: 1200px
 
 .bespoke-slide
   top: 0
@@ -62,7 +62,7 @@ article
   visibility: hidden
   overflow: hidden
   backface-visibility: hidden
-  transform: translate3d(0, 0, 0)
+  transform: translate3d(-999em, 0, 0)
   transform-style: preserve-3d
   display: flex
   flex-direction: column
@@ -84,27 +84,44 @@ article
     position: static
     margin: 0
 
-.bespoke-before-1
-  visibility: visible
-  z-index: 2
-  animation: scaleDown .7s slide_transition_easing both;
-
 .bespoke-after
   @media print
     transform: translateX(0) rotateY(0)
+  z-index: 2
+
+
+.bespoke-before
+  visibility: hidden
+
+
+.bespoke-before-1,
+.bespoke-dir-prev .bespoke-after-1
+  visibility: visible
+  animation: scaleDown .7s slide_transition_easing both
+  z-index: 1
+
+.bespoke-dir-prev .bespoke-before-1
+  animation: none
+  visibility: hidden
 
 .bespoke-inactive
-  z-index: 1
   pointer-events: none
   @media print
     opacity 1
 
 .bespoke-active
+  animation: moveFromRight slide_transition_length slide_transition_easing both
   visibility: visible
   z-index: 3
-  animation: moveFromRight slide_transition_length slide_transition_easing both;
-  &:nth-child(1)
-    animation: none
+
+.bespoke-dir-prev .bespoke-active
+  animation: moveFromLeft slide_transition_length slide_transition_easing both
+
+.bespoke-active,
+.bespoke-dir-prev .bespoke-active,
+.bespoke-before-1,
+.bespoke-dir-prev .bespoke-after-1
+  transform: translate3d(0, 0, 0)
 
 // bespoke-bullet styles
 
@@ -122,23 +139,60 @@ article
   opacity: 1
 
 @keyframes moveFromLeft
-  from 
+  from
     transform: translateX(-100%);
 
 @keyframes moveFromRight
-  from 
+  from
     transform: translateX(100%);
 
 @keyframes scaleDown
   to
     opacity: 0
-    transform: scale(.8)
+    transform: translateZ(-500px)
 
 // bespoke-state styles
 
-.emphatic,
-.emphatic .bespoke-slide
-  background: slide_background
+.flex-foo
+  display: flex
+  flex-flow: row wrap
+  justify-content: center;
+  > span
+    display: inline-block
+    margin-right: 0.3ch;
+
+.flex-mania
+  > span
+    for num, idx in (2 6 7 1 3 5 4)
+      &:nth-child({num})
+        order: idx
+        if num == 1
+          text-transform: lowercase
+        if num == 2
+          text-transform: capitalize
+
+.button
+  display: inline-block
+  text-decoration: none
+  color: #fff
+  font-weight: bold
+  background-color: #538fbe
+  padding: 20px 70px
+  font-size: 24px
+  border: 1px solid #2d6898
+  background-image: linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%)
+  border-radius: 5px
+  text-shadow: 0px -1px 0px rgba(0,0,0,.5)
+  box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5)
+  transition: all .2s ease-in-out
+  transform: rotateX(20deg)
+  &:hover
+    background-image: linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%)
+  &:active
+    box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5)
+    background-image: linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%)
+    transform: translate(0, 4px)
+  
 
 // prism styles
 
