@@ -58,8 +58,7 @@ module.exports = function(grunt) {
         files: [
           '<%= copy.src.files[0].cwd + copy.src.files[0].src[0] %>',
           '!<%= jade.src.files[0].cwd + jade.src.files[0].src %>',
-          '!<%= stylus.src.files[0].cwd + stylus.src.files[0].src %>',
-          '!<%= coffee.src.files[0].cwd + coffee.src.files[0].src %>'
+          '!<%= stylus.src.files[0].cwd + stylus.src.files[0].src %>'
         ],
         tasks: 'copy:src'
       },
