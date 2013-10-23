@@ -7,8 +7,9 @@
 
 slide_width = 100%
 slide_height = 100%
-slide_odd_colour = #1F978D
-slide_even_colour = #5CBD9C
+slide_odd_colour = darken(#1F978D, 40%);
+slide_even_colour = darken(#5CBD9C, 50%);
+slide_font_colour = #eee
 slide_font_family = "Open Sans", sans-serif
 slide_font_heading = "Montserrat", Impact, sans-serif
 
@@ -48,7 +49,7 @@ article
     right: 0
     overflow: hidden
     font-family: slide_font_family
-    color: #eee
+    color: slide_font_colour
   &.bespoke-zoomedout
     transform: scale(0.1);
     @media print
@@ -213,7 +214,7 @@ body
 
 h1, h2, h3
   font-family: slide_font_heading
-  color: #eee
+  color: slide_font_colour
 
 h1
   font-size: 72px
