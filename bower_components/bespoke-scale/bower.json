@@ -1,0 +1,16 @@
+{
+  "name": "bespoke-scale",
+  "version": "0.2.0",
+  "dependencies": {
+    "bespoke.js": ">=0.3.0"
+  },
+  "gitHead": "15d5b6fe8bfc40391082855e739f1e68529c2d35",
+  "readme": "[![Build Status](https://secure.travis-ci.org/markdalgleish/bespoke-scale.png?branch=master)](https://travis-ci.org/markdalgleish/bespoke-scale)\n\n# bespoke-scale\n\nResponsive Slide Scaling for [Bespoke.js](http://markdalgleish.com/projects/bespoke.js)\n\n## Download\n\nDownload the [production version][min] or the [development version][max], or use a [package manager](#package-managers).\n\n[min]: https://raw.github.com/markdalgleish/bespoke-scale/master/dist/bespoke-scale.min.js\n[max]: https://raw.github.com/markdalgleish/bespoke-scale/master/dist/bespoke-scale.js\n\n## Usage\n\nFirst, include both `bespoke.js` and `bespoke-scale.js` in your page.\n\nThen, simply include the plugin when instantiating your presentation.\n\n```js\nbespoke.horizontal.from('article', {\n  scale: true\n});\n```\n\nBy default, bespoke-scale detects which method to use for resizing slides. In browsers that support it, CSS `zoom` is used. In all other browsers, each slide is wrapped with an element with a `bespoke-scale-parent` class, which is resized with CSS transforms. You will need to provide styles for this element, for example:\n\n```css\n.bespoke-scale-parent {\n  perspective: 600px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n}\n```\n\nIf you'd like to specify which scaling method to use, you can pass `'zoom'` or `'transform'` as an option, for example:\n\n```js\nbespoke.horizontal.from('article', {\n  scale: 'zoom'\n});\n```\n\n## Package managers\n\n### Bower\n\n```bash\n$ bower install bespoke-scale\n```\n\n### npm\n\n```bash\n$ npm install bespoke-scale\n```\n\nThe bespoke-scale npm package is designed for use with [browserify](http://browserify.org/), e.g.\n\n```js\nrequire('bespoke');\nrequire('bespoke-scale');\n```\n\n## Credits\n\nThis plugin was built with [generator-bespokeplugin](https://github.com/markdalgleish/generator-bespokeplugin).\n\n## License\n\n[MIT License](http://en.wikipedia.org/wiki/MIT_License)\n",
+  "readmeFilename": "README.md",
+  "_id": "bespoke-scale@0.2.0",
+  "description": "[![Build Status](https://secure.travis-ci.org/markdalgleish/bespoke-scale.png?branch=master)](https://travis-ci.org/markdalgleish/bespoke-scale)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/markdalgleish/bespoke-scale.git"
+  }
+}
